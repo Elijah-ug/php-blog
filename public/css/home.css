@@ -1,0 +1,74 @@
+/* Container */
+.intro-container {
+  margin: 0 auto;
+}
+
+/* Hero section */
+.intro-hero {
+  text-align: center;
+  background: linear-gradient(135deg, #50c9c3, #96deda);
+  color: #222;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.intro-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-hero p {
+  font-size: 1.2rem;
+}
+.intro-details {
+  display: grid;
+  place-items: center;
+}
+.intros {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 2rem;
+}
+.intros > div {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 0.7rem;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+}
+.intros > div:hover {
+  scale: 103%;
+}
+/* Details section */
+.intro-details h2,
+.intro-stack h2 {
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+}
+
+.intro-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Stack section */
+.intro-stack {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro-stack p {
+  line-height: 1.6;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+}
