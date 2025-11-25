@@ -1,16 +1,14 @@
 <?php include '../partials/header.php'; ?>
 <?php
 session_start();
-// $user = require '../../controllers/loggedInUser.php';
-require_once "../../controllers/loggedInUser.php";
-if($_SESSION["loggedin_user_id"]){
 
-$id = $_SESSION["loggedin_user_id"];
 
- }else{
-    echo "ERROR";
+if(!$_SESSION["loggedin_user_id"]){
+ require 'login.php';
+exit();
  }
-
+ require_once "../../controllers/loggedInUser.php";
+ $id = $_SESSION["loggedin_user_id"];
   $avatar = "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg";
  ?>
 
@@ -48,17 +46,28 @@ foreach($user as $key => $value){
         </div>
 
         <div class="profile-actions">
-            <a href="/edit-profile.php" class="btn">Edit Profile</a>
-            <a href="/logout.php" class="btn btn-secondary">Logout</a>
+            <a href="/vanillaphp/blog/app/views/pages/updateUser.php?id=<?php echo $id; ?>" class="btn">Edit Profile</a>
+            <a href="/vanillaphp/blog/app/controllers/logout.php?id=<?php echo $id; ?>" class="btn btn-secondary">Logout</a>
         </div>
     </section>
 </main>
 
 
-    <div class="">
-        <span>Signup</span>
-        <a href="signup.php">here</a>
-    </div>
+   
+        <?php
+        if(!$user){
+            ?>
+         <div class="">
+              <span>Login</span>
+              <a href="login.php">here</a>
+              <span>Or Signup</span>
+               <a href="signup.php">here</a>
+           </div>
+            <?php
+        }
+         ?>
+        
+    
   </div>
 </body>
 </html>

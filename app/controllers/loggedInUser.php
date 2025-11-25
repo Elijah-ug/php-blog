@@ -9,6 +9,9 @@ require_once "/home/elicom/Desktop/web2/php/vanillaphp/blog/app/models/userModel
 if(!$conn){
     die("DB not connected");
 }
+if(!isset($_SESSION["loggedin_user_id"])){
+    die("No session found");
+}
 $id = $_SESSION["loggedin_user_id"];
 // get loggedin user
 $stmt = $conn->prepare("SELECT * FROM user WHERE id = ?");

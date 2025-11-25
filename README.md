@@ -6,6 +6,11 @@
 
 * Functionality
 - User is able to: register, login, logout, update profile with a pic
+ * Done 
+ - ✅ register
+ - ✅ Login
+ - ✅ Logout
+ - Update
 
 ## Posts
 - Title, pic, description, likes, replies, owner, publishedAt
