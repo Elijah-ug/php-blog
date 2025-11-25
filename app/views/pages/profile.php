@@ -1,4 +1,18 @@
 <?php include '../partials/header.php'; ?>
+<?php
+session_start();
+// $user = require '../../controllers/loggedInUser.php';
+require_once "../../controllers/loggedInUser.php";
+if($_SESSION["loggedin_user_id"]){
+
+$id = $_SESSION["loggedin_user_id"];
+
+ }else{
+    echo "ERROR";
+ }
+
+  $avatar = "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg";
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,27 +29,22 @@
 <main class="profile-container">
     <section class="profile-card">
         <?php
-        // Example user data (replace with DB query later)
-        $user = [
-            "username" => "john_doe",
-            "fullname" => "John Doe",
-            "email" => "john@example.com",
-            "bio" => "PHP enthusiast, coffee lover, and open-source contributor.",
-            "totalposts" => "5 Posts",
-            "avatar" => "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
-        ];
+        
+foreach($user as $key => $value){
+
+}
+        
         ?>
 
         <div class="profile-avatar">
-            <img src="<?php echo $user['avatar']; ?>" alt="<?php echo $user['fullname']; ?>">
+            <img src="<?php  echo  $avatar; ?>" alt="N/A">
         </div>
 
         <div class="profile-info">
-            <h1><?php echo $user['fullname']; ?></h1>
+            <h1><?php echo $user['name']; ?></h1>
             <p class="username">@<?php echo $user['username']; ?></p>
             <p class="email"><?php echo $user['email']; ?></p>
             <p class="bio"><?php echo $user['bio']; ?></p>
-            <p class="posts"><?php echo $user['totalposts']; ?></p>
         </div>
 
         <div class="profile-actions">
@@ -47,8 +56,8 @@
 
 
     <div class="">
-        <a href="./postblog.php">here</a>
-
+        <span>Signup</span>
+        <a href="signup.php">here</a>
     </div>
   </div>
 </body>

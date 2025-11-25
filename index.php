@@ -1,4 +1,9 @@
-<?php include("./app/views/partials/header.php");?>
+<?php
+session_start();
+echo "Welcome, " . htmlspecialchars($_SESSION["loggedin_user_id"]);
+
+?>
+<?php include( "./app/views/partials/header.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
