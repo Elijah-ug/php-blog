@@ -66,8 +66,8 @@ if(isset($_GET["id"]) && (int)$_GET["id"] === (int)$_SESSION["loggedin_user_id"]
             </div>
 
             <div class="form-group">
-                <label for="email">Profile Pic(Optional):</label>
-                 <input type="file" id="profile_picture" name="profile_picture" accept="image/*" value="<?php echo htmlspecialchars($user["name"]); ?>">
+                <label for="pic">Profile Pic(Optional):</label>
+                 <input type="file" id="img_file" name="img_file" accept="image/*" value="<?php echo htmlspecialchars($user["name"]); ?>">
             </div>
 
              <div class="form-group bio">

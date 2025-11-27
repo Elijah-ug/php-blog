@@ -48,7 +48,7 @@
 
             <!-- <div class="form-group">
                 <label for="email">Profile Pic(Optional):</label>
-                 <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
+                 <input type="file" id="img_file" name="img_file" accept="image/*">
             </div> -->
 
              <div class="form-group bio">

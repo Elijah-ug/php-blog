@@ -64,3 +64,10 @@ form .signup-sect > div {
 .bio {
   grid-column: 1 / span 2;
 }
+.login-btn a {
+  background-color: #007bff;
+  text-decoration: none;
+  list-style: none;
+  width: 130px;
+  padding: 10px;
+}

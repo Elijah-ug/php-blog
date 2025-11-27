@@ -10,13 +10,14 @@
  - ✅ register
  - ✅ Login
  - ✅ Logout
- - Update
+ - ✅ Update
 
 ## Posts
-- Title, pic, description, likes, replies, owner, publishedAt
-
+- Title, category, description, pic,   likes, publishedAt, user_id (8 cols)
 * Functionality
 - Describe publication date
 - Delete
 - Edit
-- Text format
+-✅ Update
+## Comments
+- content, user_id, post_id, created_at (5 cols)

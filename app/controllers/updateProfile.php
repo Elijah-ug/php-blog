@@ -89,14 +89,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && (int)$_SESSION["loggedin_user_id"] =
         $hashedpwd = password_hash($_POST["confirm_new_password"], PASSWORD_DEFAULT);
     }
     // image
-    if(isset($_FILES["profile_picture"]) && $_FILES["profile_picture"]["error"] === UPLOAD_ERR_OK){
-        $err = validateProfilePic($_FILES["profile_picture"]);
+    if(isset($_FILES["img_file"]) && $_FILES["img_file"]["error"] === UPLOAD_ERR_OK){
+        $err = validateProfilePic($_FILES["img_file"]);
         if($err){
             die("Error in upload $err");
             exit();
         }else{
-            $target_file = $target_dir . basename($_FILES["profile_picture"]["name"]);
-            move_uploaded_file($_FILES["profile_picture"]["tmp_name"], $target_file);
+            $target_file = $target_dir . basename($_FILES["img_file"]["name"]);
+            move_uploaded_file($_FILES["img_file"]["tmp_name"], $target_file);
         }
     }
 

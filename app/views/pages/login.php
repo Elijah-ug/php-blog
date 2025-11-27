@@ -26,7 +26,11 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" name="login" class="submit-button">Login</button>
+            <div class="login-btn">
+                <button type="submit" name="login" class="submit-button">Login</button>
+                <span>Or</span>
+           <a href="signup.php" class="signup-link">SignUp</a>
+            </div>
         </form>
     </div>
     </div>

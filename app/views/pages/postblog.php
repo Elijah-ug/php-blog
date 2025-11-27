@@ -1,5 +1,12 @@
 <?php include '../partials/header.php'; ?>
+<?php
+require_once "../../controllers/loggedInUser.php";
 
+// if($_SESSION["loggedin_user_id"]){
+//    echo  "LoggedIn user is $id ";
+//  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +21,34 @@
    <div class="main">
      <div class="container">
         <h1>Create New Post</h1>
-        <form action="/submit-post" method="POST">
-            <label for="postTitle">Title:</label>
-            <input type="text" id="postTitle" name="postTitle" required>
+        <form action="../../controllers/postController.php" method="POST" enctype="multipart/form-data">
+            <div class="">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
 
-            <label for="postContent">Post Content:</label>
-            <textarea id="postContent" name="postContent" required></textarea>
+            <div class="">
+                <label for="category">Category:</label>
+              <select id="category" name="category">
+                <option value="tech">Tech</option>
+                <option value="education">Education</option>
+                <option value="social">Social</option>
+                <option value="sports">Sports</option>
+                <option value="politics">Politics</option>
+              </select>
+            </div>
 
-            <button type="submit">Publish Post</button>
+            <div class="">
+                <label for="content">Post Content:</label>
+                <textarea id="content" name="content" required></textarea>
+            </div>
+
+             <div class="form-group img">
+                <label for="email">Add Image Pic(Optional):</label>
+                 <input type="file" id="img_file" name="img_file" accept="image/*">
+            </div>
+
+            <button name="publish_post" type="submit">Publish Post</button>
         </form>
     </div>
    </div>

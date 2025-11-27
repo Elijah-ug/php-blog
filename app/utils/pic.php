@@ -1,17 +1,16 @@
 <?php
        function validateProfilePic($file){
-         
         
         $uploadOk = 1;
         $fileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
          if(isset($_POST["submit"])){
             // check if image
-            $checkIfImage = getimagesize($_FILES["profile_picture"]["tmp_name"]);
+            $checkIfImage = getimagesize($_FILES["img_file"]["tmp_name"]);
             if($checkIfImage === false){
                  $uploadOk = 0;
                  return "Fake file";
             }
-            if($_FILES["profile_picture"]["size"] > 500000){
+            if($_FILES["img_file"]["size"] > 500000){
                 $uploadOk = 0;
                 return "Huge image";
             }
